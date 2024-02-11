@@ -34,7 +34,7 @@ app.post('/generate', (req, res) => {
   const outputPath = path.join(__dirname, 'public/qr_img.png');
 
   qr_svg.pipe(fs.createWriteStream(outputPath)).on('finish', () => {
-    res.send(`<p>QR Code generated!</p><img src="/qr_img.png" alt="QR Code"/><br/><a href="/qr_img.png" download="qr_code.png">Download QR Code</a>`);
+    res.send(`<p>QR Code generated! Hold down on the image and hit "Save Image" to save it to your phone.</p><img src="/qr_img.png" alt="QR Code"/><br/><a href="/qr_img.png" download="qr_code.png">Download QR Code</a>`);
   });
 });
 
